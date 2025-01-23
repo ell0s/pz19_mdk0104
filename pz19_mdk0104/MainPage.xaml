@@ -8,18 +8,29 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Fill="Blue"/>
-        <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Fill="Red"/>
-    </Grid>
+    <SplitView DisplayMode="Inline" x:Name="splitView" Background="White" PaneBackground="LightBlue">
+        <SplitView.Pane>
+            <StackPanel Orientation="Vertical">
+                <Rectangle Fill="Aqua" Height="100"></Rectangle>
+                <Rectangle Fill="Bisque" Height="100"></Rectangle>
+                <Rectangle Fill="MintCream" Height="100"></Rectangle>
+                <Rectangle Fill="LightPink" Height="100"></Rectangle>
+                <Rectangle Fill="Aqua" Height="100"></Rectangle>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="Переключить" HorizontalAlignment="Center" Click="btn_Click"/>
+                <TextBlock x:Name="text" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
 </Page>

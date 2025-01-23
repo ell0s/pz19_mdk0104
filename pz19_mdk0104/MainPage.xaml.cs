@@ -26,5 +26,19 @@ namespace pz19_mdk0104
         {
             this.InitializeComponent();
         }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (splitView.IsPaneOpen)
+            {
+                text.Text = string.Empty;
+            }
+            else
+            {
+                text.Text = "Вы открыли панель";
+            }
+            splitView.IsPaneOpen = !splitView.IsPaneOpen;
+            
+        }
     }
 }
